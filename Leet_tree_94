@@ -1,0 +1,19 @@
+class Solution {
+            ArrayList<Integer> arr = new ArrayList<Integer>();
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        if(root == null)
+            return arr;
+        autogenerate(root);
+        return arr;
+    }
+    public List<Integer> autogenerate(TreeNode ans){
+        if(ans.left != null)
+            autogenerate(ans.left);
+        arr.add(ans.val);
+        if(ans.right != null)
+            autogenerate(ans.right);
+        return arr;
+    }
+        
+}
